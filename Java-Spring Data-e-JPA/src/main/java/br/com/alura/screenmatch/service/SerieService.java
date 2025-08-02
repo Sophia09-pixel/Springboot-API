@@ -88,4 +88,17 @@ public class SerieService {
             throw new RuntimeException("Série com ID " + dto.id() + " não encontrada.");
         }
     }
+
+    public void adicionarSerie(SerieDTO dto) {
+        Serie novaSerie = new Serie();
+        novaSerie.setTitulo(dto.titulo());
+        novaSerie.setTotalTemporadas(dto.totalTemporadas());
+        novaSerie.setAvaliacao(dto.avaliacao());
+        novaSerie.setGenero(dto.genero());
+        novaSerie.setAtores(dto.atores());
+        novaSerie.setPoster(dto.poster());
+        novaSerie.setSinopse(dto.sinopse());
+        repository.save(novaSerie);
+    }
 }
+
