@@ -76,4 +76,15 @@ public class SerieController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro inesperado ao editar série.");
         }
     }
+
+    @PostMapping("/adicionar")
+    public ResponseEntity<String> adiriocarSerie(@RequestBody SerieDTO serieDTO) {
+        try {
+            serieService.adicionarSerie(serieDTO);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Série adicionada com sucesso!");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao adicionar série.");
+        }
+    }
 }
+
