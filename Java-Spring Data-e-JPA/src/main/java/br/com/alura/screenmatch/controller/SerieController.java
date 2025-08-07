@@ -63,7 +63,7 @@ public class SerieController {
         return chatService.enviarMensagem(mensagemDTO.mensgem());
     }
 
-    @PostMapping("/editar")
+    @PutMapping("/editar")
     public ResponseEntity<String> editarSerie(@RequestBody SerieDTO serieDTO) {
         try {
             serieService.editarSerie(serieDTO);
@@ -77,7 +77,7 @@ public class SerieController {
         }
     }
 
-    @PutMapping("/adicionar")
+    @PostMapping("/adicionar")
     public ResponseEntity<String> adiriocarSerie(@RequestBody SerieDTO serieDTO) {
         try {
             serieService.adicionarSerie(serieDTO);
@@ -87,5 +87,6 @@ public class SerieController {
         }
     }
 }
+
 
 
