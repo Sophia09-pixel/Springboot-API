@@ -77,7 +77,7 @@ public class SerieController {
         }
     }
 
-    @PostMapping("/adicionar")
+    @PutMapping("/adicionar")
     public ResponseEntity<String> adiriocarSerie(@RequestBody SerieDTO serieDTO) {
         try {
             serieService.adicionarSerie(serieDTO);
@@ -87,4 +87,5 @@ public class SerieController {
         }
     }
 }
+
 
